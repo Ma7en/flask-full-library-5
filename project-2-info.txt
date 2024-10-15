@@ -1,0 +1,569 @@
+
+# ubuntu
+virtualenv venv
+source venv/bin/activate 
+
+
+# create virtual env  windows
+virtualenv wvenv
+wvenv\Scripts\activate
+
+
+
+# intall packages 
+pip install flask 
+pip install flask-shell-ipython
+pip install -U Flask-SQLAlchemy
+pip install Flask-Migrate
+pip install psycopg2
+pip install psycopg2-binary
+pip install Flask-WTF
+pip install bootstrap-flask
+pip install flask-restful
+pip install Flask-Login
+
+
+
+
+
+
+# 
+1- create folder app 
+2- inside app folder create -> (__init__ app, config.py, models.py, app.py)
+2.1- edit file -> (config.py)
+2.1- edit file -> (config.py)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# create project
+0- create folder app 
+1- __init__.py -> (config SQLAlchemy - migrate - apps)
+2- models.py -> (columns SQLAlchemy)
+3- config.py -> (config db -> Development or Production)
+4- lab3.py -> app run (config db - run app)
+4.1- run postgres
+4.2- run flask db init
+5- edit model -> after -> flask db init
+    --> run -> db init -> before -> db.init_app(app)
+6- create folder blogs 
+    -> __init__.py
+        -> blueprint
+    -> views.py 
+        -> action
+7- directory -> templates 
+    -> base + index 
+8- edit __init__.py > app -> app.register
+
+# relation 
+9- create folder categories
+9.1- edit models -> (category)
+9.2- run migrate
+9.3- edit file __init__.py - categories -> ()
+9.4- edit file __init__.py - app -> ()
+
+
+
+
+# froms
+10- create file froms 
+10.1- edit __init__.py -> (bootstrap -)
+11- edit config -> (SECRET_KEY - init_app)
+12- edit views blogs (create - )
+13- edit file create.html -> (move to forms)
+14- 
+14- 
+
+
+
+# api 
+16- create folder api -> categories, blogs
+16.1- create file -> (views - seriailzers - parsers.py)
+16.2- edit file -> __init__.py -> app -> (api.add_resource)
+16.3- 
+
+
+
+
+
+
+# account 
+17- create file -> (__init__.py, views.py, forms.py)
+
+
+
+
+
+
+# home 
+18- create file -> (__init__.py, views.py, forms.py)
+
+
+
+
+
+# run project 
+cd app 
+export FLASK_APP=lab3
+flask run --debug 
+
+
+
+# run shell 
+export FLASK_APP=lab3
+flask shell 
+
+
+# postgres
+su - postgres 
+mazen@@1
+psql
+
+
+create user fayoum with password 'iti';
+
+alter user fayoum superuser;
+alter user fayoum createdb;
+
+
+psql -U fayoum -h localhost -p5432 -W -d postgres 
+iti
+
+create database iti_flask_project_2;
+
+
+
+# create db 
+cd app
+flask db init 
+flask db migrate -m 'iti flask project 2'
+flask db upgrade 
+
+
+
+# api 
+http://127.0.0.1:5000/api/blogs
+http://127.0.0.1:5000/api/categories
+
+
+
+# ubuntu 
+pip freeze > requirements.txt 
+pip install -r requirements.txt
+
+
+
+
+# windows 
+pip freeze > wrequirements.txt 
+pip install -r wrequirements.txt
+
+
+
+
+
+
+
+
+
+# =================================================================
+# =================================================================
+
+https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/
+
+
+https://python-adv-web-apps.readthedocs.io/en/latest/flask_forms.html
+
+
+
+https://www.geeksforgeeks.org/how-to-add-authentication-to-your-app-with-flask-login/
+
+
+
+https://www.youtube.com/watch?v=Z0S0VVVoTpw
+https://www.youtube.com/watch?v=2dEM-s3mRLE
+
+
+
+
+
+
+
+# =================================================================
+# =================================================================
+
+# How to run this project
+
+# step 1:- 
+    - Delete any comment or print
+    - open terminal -> Make sure you are next to the app folder.
+    - Delete the migrations folder located inside the app folder
+
+
+
+# step 2:- create virtualenv next to the app folder
+
+virtualenv venv
+source venv/bin/activate 
+
+
+# step 3:- install packages 
+    # Through the packages
+        pip install flask 
+        pip install flask-shell-ipython
+        pip install -U Flask-SQLAlchemy
+        pip install Flask-Migrate
+        pip install psycopg2
+        pip install psycopg2-binary
+        pip install Flask-WTF
+        pip install bootstrap-flask
+        pip install flask-restful
+        pip install Flask-Login
+        
+    # or 
+        pip install -r requirements.txt
+
+
+
+
+# step 4:- create database 
+# open terminal and run this command
+
+    su - postgres 
+
+    # your password
+    psql
+
+    create user fayoum with password 'iti';
+
+    alter user fayoum superuser;
+    alter user fayoum createdb;
+    \q
+
+
+    psql -U fayoum -h localhost -p5432 -W -d postgres 
+    iti
+
+    create database iti_flask_project_2;
+
+
+
+# step 5:- Database configuration
+# open terminal and run this command
+# Make sure you are inside the app folder
+    flask db init 
+    flask db migrate -m 'iti flask project 2'
+    flask db upgrade 
+
+
+
+# step 6:- Run Project
+# open terminal and run this command
+# Make sure you are inside the app folder
+    export FLASK_APP=app
+    flask run --debug 
+
+
+
+
+
+
+
+
+# =================================================================
+# =================================================================
+
+
+# users 
+
+Mazen Saad
+mazen1
+mazen1@gmail.com
+mazen@@1
+
+
+Reem Mohammed
+reem2
+reem2@gmail.com
+reemreem@@1
+
+
+
+
+
+# =================================================================
+# =================================================================
+
+# Information about categories and books
+
+
+1. التصنيف: Fiction (خيال)
+
+book-1
+الكتب:
+1984
+عدد الصفحات:
+328
+الوصف:
+عربي: 
+رواية ديستوبية تتناول موضوعات الحكومة الشمولية والمراقبة والتحكم في الأفكار.
+إنجليزي: 
+A dystopian novel that explores themes of totalitarian government, surveillance, and thought control.
+
+الرابط:
+https://www.amazon.com/1984-George-Orwell-Eighty-Four-Paperback/dp/605746222X
+
+
+2. التصنيف: History (تاريخ)
+Guns, Germs, and Steel
+
+عدد الصفحات:
+480
+الوصف:
+عربي:
+دراسة تحليلية لتطور الحضارات عبر التاريخ باستخدام أسلحة وجراثيم وتقنيات.
+إنجليزي: 
+An analytical study of the evolution of civilizations throughout history using weapons, germs, and technology.
+الرابط: 
+https://brownbagbooks.biz/products/guns-germs-and-steel
+
+
+
+3. التصنيف: Science (علوم)
+
+A Brief History of Time
+عدد الصفحات:
+212
+الوصف:
+عربي: 
+استكشاف علمي للزمن، الكون، والثقوب السوداء، من منظور علمي وفلسفي.
+إنجليزي: 
+A scientific exploration of time, the universe, and black holes, from a scientific and philosophical perspective.
+الرابط: 
+https://www.jumia.com.eg/ar/generic-a-brief-history-of-time-32588739.html
+
+
+
+
+
+
+
+
+
+
+
+{
+    "builds": [
+        {
+            "src": "app/app.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "app/app.py"
+        }
+    ]
+}
+
+
+
+
+
+
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "app.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "app.py"
+        }
+    ]
+}
+
+
+
+
+# =================================================================
+# =================================================================
+
+1. التصنيف: Fiction (خيال)
+1984
+
+عدد الصفحات: 328
+الوصف:
+عربي: رواية ديستوبية تتناول موضوعات الحكومة الشمولية والمراقبة والتحكم في الأفكار.
+إنجليزي: A dystopian novel that explores themes of totalitarian government, surveillance, and thought control.
+الرابط: 1984
+Brave New World
+
+عدد الصفحات: 268
+الوصف:
+عربي: قصة مستقبلية عن مجتمع يتحكم في الأفراد من خلال التكنولوجيا والتحفيزات الكيميائية.
+إنجليزي: A futuristic story about a society where individuals are controlled through technology and chemical stimuli.
+الرابط: Brave New World
+To Kill a Mockingbird
+
+عدد الصفحات: 281
+الوصف:
+عربي: رواية كلاسيكية تتناول قضايا العنصرية والعدالة في أمريكا الجنوبية.
+إنجليزي: A classic novel addressing issues of racism and justice in the American South.
+الرابط: To Kill a Mockingbird
+
+
+
+2. التصنيف: Non-Fiction (غير خيال)
+
+Sapiens: A Brief History of Humankind
+عدد الصفحات:
+443
+الوصف:
+عربي:
+استعراض لتاريخ البشرية منذ العصور القديمة وحتى العصر الحديث.
+إنجليزي: 
+A review of human history from ancient times to the modern era.
+الرابط: 
+https://www.kobo.com/us/en/ebook/summary-and-analysis-of-sapiens-a-brief-history-of-humankind
+
+
+2. التصنيف: Non-Fiction (غير خيال)
+Sapiens: A Brief History of Humankind
+
+عدد الصفحات: 443
+الوصف:
+عربي: استعراض لتاريخ البشرية منذ العصور القديمة وحتى العصر الحديث.
+إنجليزي: A review of human history from ancient times to the modern era.
+الرابط: Sapiens
+Educated
+
+عدد الصفحات: 334
+الوصف:
+عربي: مذكرات تتحدث عن فتاة نشأت في بيئة قاسية وتمكنت من الحصول على تعليم رغم التحديات.
+إنجليزي: A memoir about a girl raised in a harsh environment who manages to get an education despite challenges.
+الرابط: Educated
+The Immortal Life of Henrietta Lacks
+
+عدد الصفحات: 370
+الوصف:
+عربي: قصة حقيقية عن الخلايا الخالدة التي ساعدت في تقدم الطب الحديث.
+إنجليزي: The true story of the immortal cells that helped advance modern medicine.
+الرابط: The Immortal Life of Henrietta Lacks
+3. التصنيف: Science (علوم)
+A Brief History of Time
+
+عدد الصفحات: 212
+الوصف:
+عربي: استكشاف علمي للزمن، الكون، والثقوب السوداء، من منظور علمي وفلسفي.
+إنجليزي: A scientific exploration of time, the universe, and black holes, from a scientific and philosophical perspective.
+الرابط: A Brief History of Time
+The Selfish Gene
+
+عدد الصفحات: 360
+الوصف:
+عربي: نظرة جديدة إلى نظرية التطور مع التركيز على الجينات ودورها في بقاء الأنواع.
+إنجليزي: A fresh look at evolutionary theory, focusing on genes and their role in species survival.
+الرابط: The Selfish Gene
+The Gene: An Intimate History
+
+عدد الصفحات: 592
+الوصف:
+عربي: كتاب يعرض تاريخ وأهمية علم الجينات وتأثيره على مستقبل البشرية.
+إنجليزي: A book that presents the history and importance of genetics and its impact on the future of humanity.
+الرابط: The Gene
+4. التصنيف: History (تاريخ)
+Guns, Germs, and Steel
+
+عدد الصفحات: 480
+الوصف:
+عربي: دراسة تحليلية لتطور الحضارات عبر التاريخ باستخدام أسلحة وجراثيم وتقنيات.
+إنجليزي: An analytical study of the evolution of civilizations throughout history using weapons, germs, and technology.
+الرابط: Guns, Germs, and Steel
+The Silk Roads: A New History of the World
+
+عدد الصفحات: 656
+الوصف:
+عربي: إعادة قراءة للتاريخ العالمي من خلال الطرق التجارية القديمة وربط الثقافات المختلفة.
+إنجليزي: A re-reading of world history through ancient trade routes and the connection of different cultures.
+الرابط: The Silk Roads
+The History of the Ancient World
+
+عدد الصفحات: 896
+الوصف:
+عربي: استعراض شامل لتاريخ العالم القديم بدءًا من أقدم الحضارات وحتى انهيار الإمبراطورية الرومانية.
+إنجليزي: A comprehensive overview of ancient world history, from the earliest civilizations to the fall of the Roman Empire.
+الرابط: The History of the Ancient World
+5. التصنيف: Technology (تكنولوجيا)
+Clean Code: A Handbook of Agile Software Craftsmanship
+
+عدد الصفحات: 464
+الوصف:
+عربي: دليل لكتابة كود نظيف وقابل للتعديل باستخدام منهجيات البرمجة الرشيقة.
+إنجليزي: A guide to writing clean and maintainable code using agile software development methodologies.
+الرابط: Clean Code
+The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution
+
+عدد الصفحات: 560
+الوصف:
+عربي: قصة تطور التكنولوجيا الرقمية ودور الرواد في تشكيل العصر الرقمي.
+إنجليزي: The story of the development of digital technology and the role of pioneers in shaping the digital age.
+الرابط: The Innovators
+Artificial Intelligence: A Guide for Thinking Humans
+
+عدد الصفحات: 336
+الوصف:
+عربي: دليل لفهم الذكاء الاصطناعي وتأثيره على المجتمع البشري.
+إنجليزي: A guide to understanding artificial intelligence and its impact on human society.
+الرابط: Artificial Intelligence
+6. التصنيف: Self-Help (تطوير الذات)
+The Power of Habit
+
+عدد الصفحات: 371
+الوصف:
+عربي: استكشاف لعلم العادات وكيف يمكننا تعديلها لتحسين حياتنا.
+إنجليزي: An exploration of the science of habits and how we can change them to improve our lives.
+الرابط: The Power of Habit
+Atomic Habits
+
+عدد الصفحات: 320
+الوصف:
+عربي: دليل عملي لبناء عادات جيدة وتغيير سلوكيات غير مرغوبة.
+إنجليزي: A practical guide to building good habits and changing unwanted behaviors.
+الرابط: Atomic Habits
+The Subtle Art of Not Giving a F*ck
+
+عدد الصفحات: 224
+الوصف:
+عربي: كتاب يقدم نظرة جديدة تجاه السعادة والنجاح من خلال تقليل الاهتمام بما لا يهم.
+إنجليزي: A book offering a fresh perspective on happiness and success by caring less about things that don't matter.
+الرابط: The Subtle Art
+7. التصنيف: Business (أعمال)
+The Lean Startup
+
+عدد الصفحات: 336
+الوصف:
+عربي: منهجية لتأسيس شركة ناشئة تعتمد على التجريب المستمر وتجنب الهدر.
+إنجليزي: A methodology for starting a business that focuses on continuous experimentation and avoiding waste.
+الرابط: The Lean Startup
+Good to Great

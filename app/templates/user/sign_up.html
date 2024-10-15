@@ -1,0 +1,25 @@
+{% extends './base.html' %} {% from 'bootstrap5/form.html' import render_form %}
+
+<!-- page title -->
+{% block pagetitle %} DevBlog | SignUp {% endblock %}
+
+<!-- content -->
+{% block content %}
+<main>
+    <section>
+        <div class="register">
+            <div class="container py-5">
+                <!--  -->
+                <div class="content">
+                    <div class="title">
+                        <h2>Create an account</h2>
+                    </div>
+
+                    {{ render_form(form) }}
+                </div>
+                <!--  -->
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

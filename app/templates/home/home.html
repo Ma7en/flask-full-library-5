@@ -1,0 +1,246 @@
+{% extends './base.html' %}
+
+<!-- page title -->
+{% block pagetitle %} DevBlog | Home Page {% endblock %}
+
+<!-- content -->
+{% block content %}
+<!-- style -->
+<style>
+    .hero .pattern-bg {
+        background: url("{{ url_for('static', filename='assets/images/hero/pattern.png') }}");
+    }
+</style>
+
+<!-- Hero Section -->
+<div class="hero">
+    <div class="container">
+        <div class="left">
+            <h1 class="h1">
+                <!-- Hi, I'm <b>Julia&nbsp;Walker</b>. <br />Web Developer -->
+                Welcome to <b>The DevBlog Library</b>
+            </h1>
+
+            <p class="h3">
+                <!-- Specialized in <abbr title="Accessibility">a11y</abbr>
+                and Core Web Vitals -->
+                Explore the best books in various fields
+            </p>
+
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a
+                    href="{{ url_for('home.about_me') }}"
+                    class="btn btn-secondary"
+                >
+                    About Me
+                </a>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="pattern-bg"></div>
+            <div class="img-box">
+                <img
+                    src="{{ url_for('static', filename='assets/images/hero/hero-book.png') }}"
+                    alt="Julia Walker"
+                    class="hero-img"
+                />
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- main -->
+<div class="main">
+    <div class="container">
+        <!--
+        - BLOG SECTION
+      -->
+        <div class="blog">
+            <h2 class="h2">Latest Book</h2>
+
+            <div class="blog-card-group">
+                {% for book in books %}
+                <div class="blog-card">
+                    <div class="blog-card-banner">
+                        <img
+                            src="{{ book.image_url }}"
+                            alt="{{book.name}} - {{book.description }}"
+                            width="250"
+                            class="blog-banner-img"
+                        />
+                    </div>
+
+                    <div class="blog-content-wrapper">
+                        <button class="blog-topic text-tiny">
+                            <a href="{{book.category.show_url}}">
+                                <!-- Database -->
+                                {{book.category.name}}
+                            </a>
+                        </button>
+
+                        <h3>
+                            <a href="{{book.show_url}}" class="h3">
+                                {{book.name}}
+                            </a>
+                        </h3>
+
+                        <p class="blog-text">{{book.description }}</p>
+
+                        <a
+                            href="{{book.show_url}}"
+                            class="btn btn-info text-white my-3"
+                        >
+                            Show
+                        </a>
+
+                        <div class="wrapper-flex">
+                            <div class="profile-wrapper">
+                                <!-- src="{{ url_for('static', filename='assets/images/author/author.png') }}" -->
+                                <img
+                                    src="{{book.user.image_url}}"
+                                    alt="Julia Walker"
+                                    width="50"
+                                />
+                            </div>
+
+                            <div class="wrapper">
+                                <a class="h4">
+                                    <!-- Julia Walker -->
+                                    {{book.user.username}}
+                                </a>
+
+                                <p class="text-sm">
+                                    <time datetime="2022-01-17">
+                                        <!-- Jan 17, 2022 -->
+                                        {{book.created_at.strftime('%b %d,
+                                        %Y')}}
+                                    </time>
+                                    <span class="separator"></span>
+                                    <ion-icon name="time-outline"></ion-icon>
+                                    <time datetime="PT3M">
+                                        <!-- 3 min -->
+                                        {{book.created_at.strftime('%I:%M %p')}}
+                                    </time>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- <button class="btn load-more">Load More</button> -->
+        </div>
+
+        <!--
+        - ASIDE
+      -->
+        <div class="aside">
+            <div class="topics">
+                <h2 class="h2">Categories</h2>
+
+                {% for category in categories %}
+                <a href="{{category.show_url}}" class="topic-btn">
+                    <div class="icon-box">
+                        <ion-icon name="pricetag-outline"></ion-icon>
+                    </div>
+
+                    <p>{{category.name}}</p>
+                </a>
+                {% endfor %}
+            </div>
+
+            <div class="tags">
+                <h2 class="h2">Tags</h2>
+
+                <div class="wrapper">
+                    <button class="hashtag">#fiction</button>
+                    <button class="hashtag">#nonfiction</button>
+                    <button class="hashtag">#selfhelp</button>
+                    <button class="hashtag">#science</button>
+                    <button class="hashtag">#technology</button>
+                    <button class="hashtag">#history</button>
+                    <button class="hashtag">#romance</button>
+                    <button class="hashtag">#fantasy</button>
+
+                    <button class="hashtag">#mystery</button>
+                    <button class="hashtag">#biography</button>
+                    <button class="hashtag">#adventure</button>
+                    <button class="hashtag">#health</button>
+                    <button class="hashtag">#psychology</button>
+
+                    <button class="hashtag">#education</button>
+                    <button class="hashtag">#art</button>
+                </div>
+            </div>
+
+            <div class="contact">
+                <h2 class="h2">Let's Talk</h2>
+
+                <div class="wrapper">
+                    <p>
+                        Do you want to learn more about how I can help your
+                        company overcome problems? Let us have a conversation.
+                    </p>
+
+                    <ul class="social-link">
+                        <li>
+                            <a href="#" class="icon-box discord">
+                                <ion-icon name="logo-discord"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="icon-box twitter">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="icon-box facebook">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <h2 class="h2">Newsletter</h2>
+
+                <div class="wrapper">
+                    <p>
+                        Subscribe to our newsletter to be among the first to
+                        keep up with the latest updates.
+                    </p>
+
+                    <form action="#">
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email Address"
+                            required
+                        />
+
+                        <button type="submit" class="btn btn-primary">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <main>
+    <section>
+        <div class="">
+            <div class="container py-5"></div>
+        </div>
+    </section>
+</main> -->
+{% endblock %}
