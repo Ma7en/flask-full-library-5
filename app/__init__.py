@@ -15,7 +15,7 @@ from app.user import login_manager
 # from app.categories.api.views import CategoriesList, CategoriesResource
 
 
-def create_app(config_name="prd"):
+def create_app(config_name="dev"):
     app = Flask(__name__)
 
     # config

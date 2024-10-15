@@ -17,7 +17,7 @@ class DevelopmentConfig(Config):
 class ProductionConfig(Config):
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = (
-        "postgresql://fayoum:iti@localhost:5432/iti_flask_project_2"
+        "postgresql://flask_project:flask@@1@localhost:5432/flask_full_library"
     )
     # SQLALCHEMY_DATABASE_URI = "postgres://default:HTpyB9XKVg0m@ep-delicate-mouse-a4xukrvs.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
     # SQLALCHEMY_DATABASE_URI = os.getenv(

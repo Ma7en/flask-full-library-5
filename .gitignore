@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLLs
 __pycache__/
+__pycache__
 *.py[cod]
 *$py.class
 migrations
@@ -19,6 +20,10 @@ wvenv
 wvenv/
 venv
 venv/
+instance/
+instance
+database.db
+
 
 # Local configuration
 *.swp

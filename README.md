@@ -45,7 +45,7 @@ git branch -M main
 ```
 
 ```
-git remote add origin git@github.com:Ma7en/crowd-funding.git
+git remote add origin git@github.com:Ma7en/flask-full-library-5.git
 ```
 
 ```
@@ -55,7 +55,7 @@ git push -u origin main
 `Step 3` : Clone.
 
 ```
-git clone git@github.com:Ma7en/iti-final-project-backend.git
+git clone git@github.com:Ma7en/flask-full-library-5.git
 ```
 
 `Step 4` : Pull.
@@ -193,11 +193,11 @@ CREATE USER flask_project WITH PASSWORD 'flask@@1';
 ```
 
 ```
-alter user fayoum superuser;
+alter user flask_project superuser;
 ```
 
 ```
-alter user fayoum createdb;
+alter user flask_project createdb;
 ```
 
 ```
@@ -216,7 +216,13 @@ flask@@1
 create database flask_full_blog;
 ```
 
-`Step 7` : Create Migrate.
+`Step 7` : Export App.
+
+```
+export FLASK_APP=app
+```
+
+`Step 8` : Create Migrate.
 
 ```
 cd app
@@ -234,14 +240,20 @@ flask db migrate -m 'create blog db'
 flask db upgrade
 ```
 
-`Step 8` : Run Server.
+`Step 9` : Run Server.
 
 ```
-export FLASK_APP=blog
+export FLASK_APP=app
 ```
 
 ```
 flask run --debug
+```
+
+`Step 10` : Info Server.
+
+```
+m9ee9m+3@gmail.com
 ```
 
 <h3 align="center"> Windows </h3>
@@ -339,11 +351,11 @@ CREATE USER flask_project WITH PASSWORD 'flask@@1';
 ```
 
 ```
-alter user fayoum superuser;
+alter user flask_project superuser;
 ```
 
 ```
-alter user fayoum createdb;
+alter user flask_project createdb;
 ```
 
 ```
@@ -362,7 +374,13 @@ flask@@1
 create database flask_full_blog;
 ```
 
-`Step 7` : Create Migrate.
+`Step 7` : Export App.
+
+```
+set FLASK_APP=app
+```
+
+`Step 8` : Create Migrate.
 
 ```
 cd app
@@ -373,24 +391,24 @@ flask db init
 ```
 
 ```
-flask db migrate -m 'create blog db'
+flask db migrate -m "create blog db"
 ```
 
 ```
 flask db upgrade
 ```
 
-`Step 8` : Run Server.
+`Step 9` : Run Server.
 
 ```
-set FLASK_APP=blog
+set FLASK_APP=app
 ```
 
 ```
 flask run --debug
 ```
 
-`Step 9` : Info Server.
+`Step 10` : Info Server.
 
 ```
 m9ee9m+3@gmail.com
@@ -412,8 +430,11 @@ m9ee9m+3@gmail.com
 
 Technologies used in the project:
 
--   flask Framework
+-   Flask Framework
 -   Postgres Database
+-   HTML5
+-   CSS3
+-   Javascript
 
 ---
 
